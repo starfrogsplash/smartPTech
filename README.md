@@ -9,7 +9,13 @@ Once the App is up and running,
  - unique page views
  - created with Tests (`App.test.js` and in `utils/getViews.test.js`)
 
-Here is a screenshot of the GUI after you have uploaded the `webserver.log` file
+
+this is the default state of the UI `before` you have uploaded a file:
+
+![Screenshot 2021-06-12 at 20 01 59](https://user-images.githubusercontent.com/22579826/121786651-1ebca580-cbb9-11eb-887d-ec8ddb31cac9.png)
+
+
+Here is a screenshot of the GUI `after` you have uploaded the `webserver.log` file
 ![Screenshot 2021-06-12 at 16 25 05](https://user-images.githubusercontent.com/22579826/121786523-39dae580-cbb8-11eb-8fcc-fe6af5919da8.png)
 
 ## Install
