@@ -7,7 +7,9 @@ Once the App is up and running,
 - click on `Open File` Input and select a `webserver.log` file to display the results of:
  - number of page views 
  - unique page views
+ - created with Tests
 
+Here is a screenshot of the GUI after you have uploaded the `webserver.log` file
 ![Screenshot 2021-06-12 at 16 25 05](https://user-images.githubusercontent.com/22579826/121786523-39dae580-cbb8-11eb-8fcc-fe6af5919da8.png)
 
 ## Install
