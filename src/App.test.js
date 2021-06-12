@@ -1,6 +1,5 @@
 import { render, screen, within } from '@testing-library/react';
 import {App} from './App';
-import {getPageViews, getUniquePageViews} from './utils/getViews'
 import { Table } from 'semantic-ui-react'
 
 it('renders input', () => {
@@ -20,7 +19,7 @@ it('renders Table', () => {
 });
 
 
-it("the values are in the table A", () => {
+it("the values are in the table for page Views", () => {
   const values = [
     {page: '/help_page/1', views: 4},
     {page: '/home', views: 2},
@@ -30,7 +29,7 @@ it("the values are in the table A", () => {
     {page: '/contact', views: 1},
   ]
 
-  const MyTable2 = ({ values }) => {
+  const AppTest = ({ values }) => {
     return (
       <Table celled color='olive' title="totalViewsTable">
       <Table.Header>
@@ -51,7 +50,7 @@ it("the values are in the table A", () => {
   </Table>
   )};
 
-  render(<MyTable2 values={values} />);
+  render(<AppTest values={values} />);
 
   values.forEach((item) => {
     const row = screen.getByText(item.page).closest("td");
@@ -70,7 +69,7 @@ it("the values are in the table B", () => {
     {page: '/about', uniqueViews: 1},
   ]
 
-  const MyTable2 = ({ values }) => {
+  const AppTest = ({ values }) => {
     return (
       <Table celled color='olive' title="totalViewsTable">
       <Table.Header>
@@ -91,7 +90,7 @@ it("the values are in the table B", () => {
   </Table>
   )};
 
-  render(<MyTable2 values={values} />);
+  render(<AppTest values={values} />);
 
   values.forEach((item) => {
     const row = screen.getByText(item.page).closest("td");
@@ -99,64 +98,3 @@ it("the values are in the table B", () => {
     expect(utils.getByText(item.page)).toBeInTheDocument();
   });
 });
-
-
-const mockData = [
-  "/help_page/1 126.318.035.038", 
-  "/contact 184.123.665.067", 
-  "/home 184.123.665.067", 
-  "/about/2 444.701.448.104", 
-  "/help_page/1 929.398.951.889", 
-  "/index 444.701.448.104", 
-  "/help_page/1 722.247.931.582", 
-  "/about 061.945.150.735", 
-  "/help_page/1 646.865.545.408", 
-  "/home 235.313.352.950"
-]
-
-it('test function', () => {
-
-  const resultArry = [
-    {page: '/help_page/1', views: 4},
-    {page: '/home', views: 2},
-    {page: '/about', views: 1},
-    {page: '/index', views: 1},
-    {page: '/about/2', views: 1},
-    {page: '/contact', views: 1},
-  ]
-
-  const result = getPageViews(mockData)
-  expect(result).toEqual(resultArry)
-})
-
-
-it('test function', () => {
-
-  const mockData = [
-    "/help_page/1 126.318.035.038", 
-    "/contact 184.123.665.067", 
-    "/home 184.123.665.067", 
-    "/about/2 444.701.448.104", 
-    "/home 184.123.665.067", 
-    "/help_page/1 929.398.951.889", 
-    "/index 444.701.448.104", 
-    "/help_page/1 722.247.931.582", 
-    "/about 061.945.150.735", 
-    "/help_page/1 126.318.035.038", 
-    "/help_page/1 646.865.545.408", 
-    "/home 235.313.352.950"
-  ]
-
-  const resultArry = [
-    {page: '/help_page/1', uniqueViews: 4},
-    {page: '/home', uniqueViews: 2},
-    {page: '/index', uniqueViews: 1},
-    {page: '/contact', uniqueViews: 1},
-    {page: '/about/2', uniqueViews: 1},
-    {page: '/about', uniqueViews: 1},
-  ]
-
-  const result = getUniquePageViews(mockData)
-
-  expect(result).toEqual(resultArry)
-})
