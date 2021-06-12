@@ -8,6 +8,7 @@ Once the App is up and running,
  - number of page views 
  - unique page views
 
+![Screenshot 2021-06-12 at 16 25 05](https://user-images.githubusercontent.com/22579826/121786523-39dae580-cbb8-11eb-8fcc-fe6af5919da8.png)
 
 ## Install
 Install the app running `yarn install`
