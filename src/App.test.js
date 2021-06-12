@@ -59,7 +59,7 @@ it("the values are in the table for page Views", () => {
   });
 });
 
-it("the values are in the table B", () => {
+it("the values are in the table for unique views", () => {
   const values = [
     {page: '/help_page/1', uniqueViews: 4},
     {page: '/home', uniqueViews: 2},
